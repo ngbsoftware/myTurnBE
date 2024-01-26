@@ -1,0 +1,41 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div *ngFor="let tempShop of shopList" class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ tempShop.name }}</h3>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ tempShop.address }}</h6>
+                            <a routerLink="/shops/{{ tempShop.id }}" class="btn btn-primary">Ask</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <table class="table table-hover">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Open</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempShop of shopList">
+            
+                <td><a routerLink="/shop/{{ tempShop.id }}">{{ tempShop.name }}</a></td>
+                <td>{{ tempShop.address }}</td>
+                <td>{{ tempShop.phone }}</td>
+                <td>{{ tempShop.openTime }} - {{ tempShop.closeTime }}</td>
+            
+        </tr>
+    </tbody>
+</table> -->

@@ -1,0 +1,21 @@
+<div class="detail-section">
+    <div class="container-fluid">
+        <a routerLink="/shops" class="btn btn-primary" style="margin-top: 50px;"><  Back</a>
+        <h3 class="section-header">{{ shop?.name }}</h3>
+        <div class="description">{{ shop?.address }}, {{ shop?.city }}, {{ shop?.region }}, {{ shop?.country }}</div>
+        <hr>
+        <div class="key-value-row">Open time: <div class="open-time">{{ shop?.openTime }} to {{ shop?.closeTime }}</div></div>
+        <hr>
+        <div class="hours-grid-container">
+            <div *ngFor="let key of getKeys()">
+                <h5>{{ key }}</h5>
+                <div class="hours-grid-rows">
+                    <div class="time-row" [ngClass]="{ 'time-row-selected': hour.isTaken }"  *ngFor="let hour of dictionary.get(key)" (click)="open(hour)">
+                        {{ getDateTime(hour.time) }}
+                        <span>{{ hour.name }}</span>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
